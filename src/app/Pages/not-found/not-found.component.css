@@ -1,0 +1,14 @@
+.notFound {
+  background-image: url("/images/404.svg");
+  width: 100vw;
+  height: 70%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+* {
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+}

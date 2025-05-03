@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { LogoComponent } from '../logo/logo.component';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  imports: [LogoComponent],
+  imports: [LogoComponent, RouterLinkActive, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+  pages = ['home', 'notfound'];
+}

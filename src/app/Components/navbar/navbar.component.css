@@ -1,0 +1,9 @@
+.active {
+  border-bottom: 2px solid var(--beige-) !important;
+}
+.nav-link {
+  margin-left: 20px;
+  padding: 0px !important;
+  text-transform: capitalize;
+  border-bottom: 2px solid transparent;
+}

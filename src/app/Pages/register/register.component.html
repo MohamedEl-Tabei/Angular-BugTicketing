@@ -6,7 +6,7 @@
       <app-logo scale="1.1"></app-logo>
     </div>
     <form>
-      <div class="d-flex flex-column gap-3">
+      <div class="d-flex flex-column gap-4">
         <div class="form-floating">
           <input
             type="email"
@@ -36,20 +36,27 @@
               <input
                 class="form-check-input"
                 type="checkbox"
-                name="gridRadios"
-                id="gridRadios1"
-                value="option1"
+                name="{{ item }}"
+                id="{{ item }}"
+                value="{{ item }}"
               />
-              <label class="form-check-label" for="gridRadios1">
-                {{ item }}
+              <label class="form-check-label" for="{{ item }}">
+                <small>{{ item }}</small>
               </label>
             </div>
             }
           </div>
         </fieldset>
-        <div class="form-floating">
+        <div class="form-floating position-relative">
+          <img
+            class="eye"
+            (click)="onEye()"
+            [src]="hidePassword ? '/images/eye-slash.svg' : '/images/eye.svg'"
+            alt="password status"
+          />
+
           <input
-            type="password"
+            [type]="hidePassword ? 'password' : 'text'"
             class="form-control"
             id="floatingPassword"
             placeholder="Password"
@@ -60,7 +67,10 @@
 
       <div class="d-flex flex-column align-items-center gap-4 mt-5">
         <button type="submit" class="btn btn-2 m-auto w-100">Sign up</button>
-        <small>Already have an account? <span class="link">Login</span> </small>
+        <small
+          >Already have an account?
+          <a routerLink="/login" class="link">Login</a>
+        </small>
       </div>
     </form>
   </div>
