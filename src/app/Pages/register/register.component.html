@@ -1,0 +1,67 @@
+<div class="page justify-content-center align-items-center d-flex">
+  <div
+    class="container bounce-top shadow-lg rounded-4 p-4 d-flex justify-content-between flex-column"
+  >
+    <div class="d-flex justify-content-center mb-5">
+      <app-logo scale="1.1"></app-logo>
+    </div>
+    <form>
+      <div class="d-flex flex-column gap-3">
+        <div class="form-floating">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="user123"
+          />
+          <label for="floatingInput">User name</label>
+        </div>
+
+        <div class="form-floating">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+          />
+          <label for="floatingInput">Email address</label>
+        </div>
+        <fieldset class="row">
+          <legend class="col-form-label col-sm-3 pt-0 w-madx">
+            Select Role(s)
+          </legend>
+          <div class="col-sm d-flex">
+            @for (item of roles; track $index) {
+            <div class="form-check me-5">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="gridRadios"
+                id="gridRadios1"
+                value="option1"
+              />
+              <label class="form-check-label" for="gridRadios1">
+                {{ item }}
+              </label>
+            </div>
+            }
+          </div>
+        </fieldset>
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+          />
+          <label for="floatingPassword">Password</label>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column align-items-center gap-4 mt-5">
+        <button type="submit" class="btn btn-2 m-auto w-100">Sign up</button>
+        <small>Already have an account? <span class="link">Login</span> </small>
+      </div>
+    </form>
+  </div>
+</div>

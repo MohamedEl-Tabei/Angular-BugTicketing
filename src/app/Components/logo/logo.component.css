@@ -1,0 +1,23 @@
+div {
+  font-weight: bold;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: var(--red);
+  position: relative;
+  color: var(--beige);
+  background-image: url("/images/ladybug.png");
+  background-position: bottom;
+  font-weight: bold;
+  border: 5px double var(--beige);
+  transform: scale(0.8);
+  cursor: pointer;
+  width: 100px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div:hover {
+  color: var(--beige);
+  border-color: var(--beige);
+}

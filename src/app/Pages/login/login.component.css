@@ -1,0 +1,13 @@
+.cover {
+  transform: scaleX(-1);
+}
+@keyframes cover {
+  0% {
+    transform: scaleX(1);
+    right: 700px;
+  }
+  100% {
+    right: 0px;
+    transform: scaleX(-1);
+  }
+}
