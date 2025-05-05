@@ -3,7 +3,6 @@
   --red: #da2c38;
   --light-green: #87c38f;
   --beige: #f4f0bb;
-  --beige-: #fde49a;
   --dark: #424e52;
 }
 * {
@@ -58,7 +57,8 @@
 .link {
   cursor: pointer;
   text-decoration: none;
-  color: var(--light-green);
+  color: var(--dark);
+  font-weight: bold;
   opacity: 0.5;
 }
 .link:hover {

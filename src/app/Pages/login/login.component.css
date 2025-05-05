@@ -1,13 +1,9 @@
-.cover {
-  transform: scaleX(-1);
+.container {
+  max-width: 700px;
 }
-@keyframes cover {
-  0% {
-    transform: scaleX(1);
-    right: 700px;
-  }
-  100% {
-    right: 0px;
-    transform: scaleX(-1);
-  }
+.h-90 {
+  height: 90%;
+}
+.h-80 {
+  height: 80%;
 }

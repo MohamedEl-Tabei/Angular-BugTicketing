@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TRegisterRequest } from '../../Types/user';
+import { TRegisterRequest } from '../../Types/TRegisterRequest';
 import { LogoComponent } from '../../Components/logo/logo.component';
 import { RouterLink } from '@angular/router';
 

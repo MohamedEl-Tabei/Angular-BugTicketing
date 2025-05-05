@@ -1,9 +1,18 @@
 .active {
-  border-bottom: 2px solid var(--beige-) !important;
+  border-bottom: 2px solid var(--beige) !important;
 }
 .nav-link {
   margin-left: 20px;
   padding: 0px !important;
   text-transform: capitalize;
   border-bottom: 2px solid transparent;
+}
+.login {
+  color: var(--beige);
+  background-color: transparent;
+  border-color: var(--beige);
+}
+.login:hover {
+  border-color: var(--dark);
+  color: white;
 }
