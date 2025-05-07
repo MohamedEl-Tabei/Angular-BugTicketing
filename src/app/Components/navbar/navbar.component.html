@@ -29,10 +29,15 @@
         }
       </ul>
       <div>
+        @if(account.userName){
+        <small class="text-light">{{ account.userName }}</small>
+
+        }@else {
         <button class="btn btn-sm btn-1 me-2 login" routerLink="login">
           Log in
         </button>
         <button class="btn btn-sm btn-2" routerLink="signup">Sign up</button>
+        }
       </div>
     </div>
   </div>

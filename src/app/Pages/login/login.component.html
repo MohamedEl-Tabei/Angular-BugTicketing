@@ -10,10 +10,11 @@
         <div class="form-floating">
           <input
             type="email"
-            class="form-control"
+            class="form-control {{ err.length ? 'is-invalid' : '' }}"
             id="email"
             placeholder="name@example.com"
             (input)="onInputData($event)"
+            required
           />
           <label for="email">Email address</label>
         </div>
@@ -28,10 +29,11 @@
 
           <input
             [type]="hidePassword ? 'password' : 'text'"
-            class="form-control"
+            class="form-control {{ err.length ? 'is-invalid' : '' }}"
             id="password"
             placeholder="Password"
-            (change)="onInputData($event)"
+            (input)="onInputData($event)"
+            required
           />
           <label for="password">Password</label>
         </div>
@@ -52,6 +54,9 @@
       </div>
 
       <div class="d-flex flex-column align-items-center gap-4 mt-5">
+        <small class="invalid-feedback d-block text-center"
+          >{{ err }}<small class="invisible">.</small></small
+        >
         <button type="submit" class="btn btn-2 m-auto w-100">Log in</button>
         <small
           >Don’t you have an account?

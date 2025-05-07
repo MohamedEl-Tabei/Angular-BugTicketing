@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { TLoginRequest } from '../../Types/TLoginRequest';
 import { LogoComponent } from '../../Components/logo/logo.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthenticationService } from '../../Services/authentication.service';
+import { AccountService } from '../../Services/account.service';
 
 @Component({
   selector: 'app-login',
@@ -17,18 +18,29 @@ export class LoginComponent {
     rememberme: false,
   };
   hidePassword = true;
-
-  constructor(private authenticationService: AuthenticationService) {}
+  err = '';
+  constructor(
+    private authenticationService: AuthenticationService,
+    private accountServices: AccountService,
+    private router: Router
+  ) {}
 
   onEye = () => (this.hidePassword = !this.hidePassword);
   onLogin = (event: Event) => {
     event.preventDefault();
-    this.authenticationService.loginRequest(this.loginData);
+    this.authenticationService.loginRequest(this.loginData).subscribe({
+      next: (value) => {
+        this.accountServices.onAccountChanged.emit(value);
+        this.router.navigateByUrl('home');
+      },
+      error: (err: Error) => (this.err = 'Invalid email or password'),
+    });
   };
   onInputData = (event: Event) => {
     var currentTarget = event.currentTarget as HTMLInputElement;
     var id = currentTarget.id;
     var value = currentTarget.value;
+    this.err = '';
     if (id == 'password') this.loginData.password = value;
     if (id == 'email') this.loginData.email = value;
   };

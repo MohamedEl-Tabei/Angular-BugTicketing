@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { LogoComponent } from '../logo/logo.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { TAccount } from '../../Types/TAccount';
+import { AccountService } from '../../Services/account.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,4 +12,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class NavbarComponent {
   pages = ['home', 'notfound'];
+  account: TAccount = {
+    token: '',
+    userName: '',
+  };
+  constructor(private accountServices: AccountService) {}
+  ngOnInit() {
+    this.accountServices.onAccountChanged.subscribe((a) => (this.account = a));
+  }
 }
